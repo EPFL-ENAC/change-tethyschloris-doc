@@ -1,0 +1,17 @@
+*.jl.*.cov
+*.jl.cov
+*.jl.mem
+*.rej
+.DS_Store
+.benchmarkci
+Manifest.toml
+benchmark/*.json
+coverage
+docs/build
+docs/Manifest.toml
+env
+node_modules
+*.m
+*.mat
+.python-version
+*.nc

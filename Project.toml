@@ -1,0 +1,13 @@
+name = "TethysChlorisDoc"
+uuid = "e39aa6fb-499b-4f13-a97b-0c49940e9d42"
+authors = ["Hugo Solleder <hugo.solleder@epfl.ch> and contributors"]
+version = "0.7.1"
+
+[compat]
+julia = "1.10"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]

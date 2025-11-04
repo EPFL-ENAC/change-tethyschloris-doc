@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><title>Input file formats · change-tethyschloris-doc</title><meta name="title" content="Input file formats · change-tethyschloris-doc"/><meta property="og:title" content="Input file formats · change-tethyschloris-doc"/><meta property="twitter:title" content="Input file formats · change-tethyschloris-doc"/><meta name="description" content="Documentation for change-tethyschloris-doc."/><meta property="og:description" content="Documentation for change-tethyschloris-doc."/><meta property="twitter:description" content="Documentation for change-tethyschloris-doc."/><meta property="og:url" content="https://EPFL-ENAC.github.io/change-tethyschloris-doc/02-inputs/"/><meta property="twitter:url" content="https://EPFL-ENAC.github.io/change-tethyschloris-doc/02-inputs/"/><link rel="canonical" href="https://EPFL-ENAC.github.io/change-tethyschloris-doc/02-inputs/"/><script data-outdated-warner src="../assets/warner.js"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/lato-font/3.0.0/css/lato-font.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/juliamono/0.050/juliamono.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/fontawesome.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/solid.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/brands.min.css" rel="stylesheet" type="text/css"/><link href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.8/katex.min.css" rel="stylesheet" type="text/css"/><script>documenterBaseURL=".."</script><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" data-main="../assets/documenter.js"></script><script src="../search_index.js"></script><script src="../siteinfo.js"></script><script src="../../versions.js"></script><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-mocha.css" data-theme-name="catppuccin-mocha"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-macchiato.css" data-theme-name="catppuccin-macchiato"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-frappe.css" data-theme-name="catppuccin-frappe"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/catppuccin-latte.css" data-theme-name="catppuccin-latte"/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-dark.css" data-theme-name="documenter-dark" data-theme-primary-dark/><link class="docs-theme-link" rel="stylesheet" type="text/css" href="../assets/themes/documenter-light.css" data-theme-name="documenter-light" data-theme-primary/><script src="../assets/themeswap.js"></script></head><body><div id="documenter"><nav class="docs-sidebar"><div class="docs-package-name"><span class="docs-autofit"><a href="../">change-tethyschloris-doc</a></span></div><button class="docs-search-query input is-rounded is-small is-clickable my-2 mx-auto py-1 px-2" id="documenter-search-query">Search docs (Ctrl + /)</button><ul class="docs-menu"><li><a class="tocitem" href="../">Home</a></li><li><a class="tocitem" href="../01-installation/">Installation</a></li><li class="is-active"><a class="tocitem" href>Input file formats</a><ul class="internal"><li><a class="tocitem" href="#input_details"><span>Detailed preparation of the model inputs</span></a></li><li><a class="tocitem" href="#input_requirements"><span>Requirements</span></a></li><li><a class="tocitem" href="#input_sources"><span>Step 1: Data Sources</span></a></li><li><a class="tocitem" href="#input_yaml"><span>Step 2: YAML File</span></a></li><li><a class="tocitem" href="#input_netcdf"><span>Step 3: NetCDF File</span></a></li><li><a class="tocitem" href="#input_examples"><span>Existing Examples</span></a></li></ul></li><li><a class="tocitem" href="../03-model/">Running the model</a></li><li><a class="tocitem" href="../04-plots/">Plotting the results</a></li><li><a class="tocitem" href="../05-saving/">Saving the results</a></li><li><a class="tocitem" href="../90-contributing/">Contributing</a></li><li><span class="tocitem">Developer docs</span><ul><li><a class="tocitem" href="../91-developer/">Developer</a></li><li><a class="tocitem" href="../92-debugging/">Debugging</a></li></ul></li></ul><div class="docs-version-selector field has-addons"><div class="control"><span class="docs-label button is-static is-size-7">Version</span></div><div class="docs-selector control is-expanded"><div class="select is-fullwidth is-size-7"><select id="documenter-version-selector"></select></div></div></div></nav><div class="docs-main"><header class="docs-navbar"><a class="docs-sidebar-button docs-navbar-link fa-solid fa-bars is-hidden-desktop" id="documenter-sidebar-button" href="#"></a><nav class="breadcrumb"><ul class="is-hidden-mobile"><li class="is-active"><a href>Input file formats</a></li></ul><ul class="is-hidden-tablet"><li class="is-active"><a href>Input file formats</a></li></ul></nav><div class="docs-right"><a class="docs-navbar-link" href="https://github.com/EPFL-ENAC/change-tethyschloris-doc" title="View the repository on GitHub"><span class="docs-icon fa-brands"></span><span class="docs-label is-hidden-touch">GitHub</span></a><a class="docs-navbar-link" href="https://github.com/EPFL-ENAC/change-tethyschloris-doc/blob/main/docs/src/02-inputs.md" title="Edit source on GitHub"><span class="docs-icon fa-solid"></span></a><a class="docs-settings-button docs-navbar-link fa-solid fa-gear" id="documenter-settings-button" href="#" title="Settings"></a><a class="docs-article-toggle-button fa-solid fa-chevron-up" id="documenter-article-toggle-button" href="javascript:;" title="Collapse all docstrings"></a></div></header><article class="content" id="documenter-page"><h1 id="inputs"><a class="docs-heading-anchor" href="#inputs">Preparing the model inputs</a><a id="inputs-1"></a><a class="docs-heading-anchor-permalink" href="#inputs" title="Permalink"></a></h1><p>TethysChloris.jl requires two specific input files to run the model: a configuration file and a forcing file. These files are essential for defining the model&#39;s parameters and the environmental conditions under which it operates.</p><p>The configuration file is a YAML file that contains various parameters necessary for the model&#39;s operation. The dictionary will be used to initialize the model parameters. As such, most of the contents of the YAML file comes from the <code>MOD_PARAM_*</code> files in the original MATLAB code. When functions were used in the <code>MOD_PARAM_*</code> files, the corresponding Julia function are used directly during the creation of the model parameters. This is the case for <code>Soil_parameters</code> and <code>Soil_parametersII</code>.</p><p>The forcing file is a NetCDF file that provides the environmental data needed for the model. The NetCDF file is created using a mixture of the <code>MOD_PARAM_*</code> files and the MAT files associated with the original MATLAB code, as well as some hard-coded initialization values.</p><p>The <code>data-raw/create_input_data.jl</code> script is an example of how to create these input files from the original MATLAB data. This script is designed to generate the necessary input files in the correct format for TethysChloris.jl.</p><h2 id="input_details"><a class="docs-heading-anchor" href="#input_details">Detailed preparation of the model inputs</a><a id="input_details-1"></a><a class="docs-heading-anchor-permalink" href="#input_details" title="Permalink"></a></h2><p>To run TethysChloris.jl, you need to create two essential input files:</p><h3 id="A-YAML-configuration-file-containing-model-parameters"><a class="docs-heading-anchor" href="#A-YAML-configuration-file-containing-model-parameters">A YAML configuration file containing model parameters</a><a id="A-YAML-configuration-file-containing-model-parameters-1"></a><a class="docs-heading-anchor-permalink" href="#A-YAML-configuration-file-containing-model-parameters" title="Permalink"></a></h3><h3 id="A-NetCDF-file-with-forcing-data-and-initial-conditions-for-the-state-and-auxiliary-variables"><a class="docs-heading-anchor" href="#A-NetCDF-file-with-forcing-data-and-initial-conditions-for-the-state-and-auxiliary-variables">A NetCDF file with forcing data and initial conditions for the state and auxiliary variables</a><a id="A-NetCDF-file-with-forcing-data-and-initial-conditions-for-the-state-and-auxiliary-variables-1"></a><a class="docs-heading-anchor-permalink" href="#A-NetCDF-file-with-forcing-data-and-initial-conditions-for-the-state-and-auxiliary-variables" title="Permalink"></a></h3><p>Below are step-by-step instructions for creating these files from meteorological data.</p><h2 id="input_requirements"><a class="docs-heading-anchor" href="#input_requirements">Requirements</a><a id="input_requirements-1"></a><a class="docs-heading-anchor-permalink" href="#input_requirements" title="Permalink"></a></h2><p>You&#39;ll need the following Julia packages:</p><pre><code class="language-julia hljs">using NCDatasets  # For handling NetCDF files
+using YAML        # For creating YAML configuration files
+using Dates       # For date manipulation
+using MAT         # For reading MATLAB .mat files (if using MATLAB data sources)</code></pre><h2 id="input_sources"><a class="docs-heading-anchor" href="#input_sources">Step 1: Data Sources</a><a id="input_sources-1"></a><a class="docs-heading-anchor-permalink" href="#input_sources" title="Permalink"></a></h2><p>Your meteorological forcing data should include the following hourly variables:</p><ul><li>Date and time (as a single <code>Vector{DateTime}</code> object)</li><li>Temperature (Ta)</li><li>Precipitation (Pr)</li><li>Wind speed (Ws)</li><li>Vapor pressure (ea)</li><li>Solar radiation components (SAD1, SAD2, SAB1, SAB2)</li><li>Dew point temperature (Tdew)</li><li>Saturation vapor pressure (esat)</li><li>Photosynthetically active radiation (PARB, PARD)</li><li>CO2 concentration (Ca)</li></ul><h2 id="input_yaml"><a class="docs-heading-anchor" href="#input_yaml">Step 2: YAML File</a><a id="input_yaml-1"></a><a class="docs-heading-anchor-permalink" href="#input_yaml" title="Permalink"></a></h2><p>The YAML configuration file contains several parameter groups. Please note that some parameters that were explicitly calculated in the MATLAB <code>MOD_PARAM_*</code> files are now computed directly in the Julia composite types during model initialization.</p><h3 id="Basic-parameters"><a class="docs-heading-anchor" href="#Basic-parameters">Basic parameters</a><a id="Basic-parameters-1"></a><a class="docs-heading-anchor-permalink" href="#Basic-parameters" title="Permalink"></a></h3><pre><code class="language-julia hljs">Zs = FT.([0, 10, 20, 50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1350, 1500])
+n_layers = length(Zs) - 1
+
+data = Dict{String,Any}()
+data[&quot;n_layers&quot;] = n_layers</code></pre><h3 id="Cell-properties"><a class="docs-heading-anchor" href="#Cell-properties">Cell properties</a><a id="Cell-properties-1"></a><a class="docs-heading-anchor-permalink" href="#Cell-properties" title="Permalink"></a></h3><pre><code class="language-julia hljs">data[&quot;cell&quot;] = Dict{String,Any}(
+    &quot;cellsize&quot; =&gt; 1.0,
+    &quot;SvF&quot; =&gt; 1.0,
+    &quot;SN&quot; =&gt; 0.0,
+    &quot;Slo_top&quot; =&gt; 0.0,
+    &quot;Ared&quot; =&gt; 1.0,
+    &quot;aR&quot; =&gt; 1.0,
+)</code></pre><p>The <code>Asur</code>, <code>Slo_pot</code>, <code>aTop</code>, <code>cosalp</code>, <code>sinalp</code> and <code>aTop_scaled</code> parameters are now calculated internally based on the <code>cellsize</code> and <code>Slo_top</code> parameters.</p><h3 id="Simulation-settings"><a class="docs-heading-anchor" href="#Simulation-settings">Simulation settings</a><a id="Simulation-settings-1"></a><a class="docs-heading-anchor-permalink" href="#Simulation-settings" title="Permalink"></a></h3><pre><code class="language-julia hljs">data[&quot;simulation&quot;] = Dict{String,Any}(
+    &quot;Zs&quot; =&gt; Zs,
+    &quot;dt&quot; =&gt; 3600,
+    &quot;dtd&quot; =&gt; 1,
+    &quot;Lon&quot; =&gt; -120.9508,
+    &quot;Lat&quot; =&gt; 38.4133,
+    &quot;DeltaGMT&quot; =&gt; -8,
+    &quot;t_bef&quot; =&gt; 0.25,
+    &quot;t_aft&quot; =&gt; 0.75,
+    &quot;Zdes&quot; =&gt; 10.0,
+    &quot;Zinf&quot; =&gt; 10.0,
+    &quot;Zbio&quot; =&gt; 250.0,
+    &quot;SPAR&quot; =&gt; 2,
+    &quot;fpr&quot; =&gt; 1.0,
+    &quot;CASE_ROOT&quot; =&gt; 1,
+    &quot;zatm&quot; =&gt; 2.0,
+    &quot;timerange&quot; =&gt; [DateTime(2011, 10, 1, 0, 0), DateTime(2017, 9, 30, 23, 0)],
+    &quot;SPAR&quot; =&gt; 2,
+  )</code></pre><p>The <code>timerange</code> parameter allows the user to specify the start and end dates for the simulation. The <code>ms</code>, <code>dth</code>, <code>dz</code>, <code>Dz</code>, <code>EvL_Zs</code>, <code>Inf_Zs</code>, <code>Bio_Zs</code>, <code>timesteps</code> and <code>days</code> parameters are now calculated internally based on the <code>Zs</code>, <code>Zdes</code>, <code>Zinf</code>, <code>Zbio</code>, <code>dth</code>, and <code>timerange</code> parameters.</p><h3 id="Land-cover-information"><a class="docs-heading-anchor" href="#Land-cover-information">Land cover information</a><a id="Land-cover-information-1"></a><a class="docs-heading-anchor-permalink" href="#Land-cover-information" title="Permalink"></a></h3><pre><code class="language-julia hljs">data[&quot;landcover&quot;] = Dict{String,Any}(
+    &quot;Cbare&quot; =&gt; 0.0,
+    &quot;Cwat&quot; =&gt; 0.0,
+    &quot;Curb&quot; =&gt; 0.0,
+    &quot;Crock&quot; =&gt; 0.0,
+    &quot;Ccrown&quot; =&gt; [1.0],
+)</code></pre><h3 id="Soil-properties"><a class="docs-heading-anchor" href="#Soil-properties">Soil properties</a><a id="Soil-properties-1"></a><a class="docs-heading-anchor-permalink" href="#Soil-properties" title="Permalink"></a></h3><pre><code class="language-julia hljs">data[&quot;soil&quot;] = Dict{String,Any}(
+    &quot;Pcla&quot; =&gt; 0.13,
+    &quot;Psan&quot; =&gt; 0.30,
+    &quot;Porg&quot; =&gt; 0.0139,
+    &quot;Kfc&quot; =&gt; 0.2,
+    &quot;Phy&quot; =&gt; 10000.0,
+    &quot;color_class&quot; =&gt; 0,
+)</code></pre><p>The following parameters are now calculated internally using the <code>soil_parameters</code> and <code>Soil_parametersII</code> functions based on the <code>Pcla</code>, <code>Psan</code>, <code>Porg</code>, <code>Kfc</code> and <code>Phy</code> parameters:</p><ul><li><code>Ks_Zs</code></li><li><code>Osat</code></li><li><code>Ohy</code></li><li><code>L</code></li><li><code>Pe</code></li><li><code>O33</code></li><li><code>alpVG</code></li><li><code>nVG</code></li><li><code>Ks_mac</code></li><li><code>Omac</code></li><li><code>alpVGM</code></li><li><code>nVGM</code></li><li><code>rsd</code></li><li><code>lan_dry</code></li><li><code>lan_s</code></li><li><code>cv_s</code></li><li><code>s_SVG</code></li><li><code>bVG</code></li><li><code>lVG</code></li><li><code>lVGM</code></li><li><code>Ofc</code></li><li><code>K_usle</code></li></ul><h3 id="Debris-cover-parameters"><a class="docs-heading-anchor" href="#Debris-cover-parameters">Debris cover parameters</a><a id="Debris-cover-parameters-1"></a><a class="docs-heading-anchor-permalink" href="#Debris-cover-parameters" title="Permalink"></a></h3><pre><code class="language-julia hljs">data[&quot;debris&quot;] = Dict{String,Any}(
+    &quot;alb&quot; =&gt; 0.13,
+    &quot;e_sur&quot; =&gt; 0.94,
+    &quot;lan&quot; =&gt; 0.94,
+    &quot;rho&quot; =&gt; 1496.0,
+    &quot;cs&quot; =&gt; 948.0,
+    &quot;zom&quot; =&gt; 0.016,
+    &quot;dbThick&quot; =&gt; 0.0,
+)</code></pre><h3 id="Rock-parameters"><a class="docs-heading-anchor" href="#Rock-parameters">Rock parameters</a><a id="Rock-parameters-1"></a><a class="docs-heading-anchor-permalink" href="#Rock-parameters" title="Permalink"></a></h3><pre><code class="language-julia hljs">data[&quot;rock&quot;] = Dict{String,Any}(
+    &quot;Kbot&quot; =&gt; NaN64,
+    &quot;Krock&quot; =&gt; NaN64,
+    &quot;In_max_rock&quot; =&gt; 0.1
+)</code></pre><h3 id="Snow-and-ice-parameters"><a class="docs-heading-anchor" href="#Snow-and-ice-parameters">Snow and ice parameters</a><a id="Snow-and-ice-parameters-1"></a><a class="docs-heading-anchor-permalink" href="#Snow-and-ice-parameters" title="Permalink"></a></h3><pre><code class="language-julia hljs">data[&quot;snowice&quot;] = Dict{String,Any}(
+    &quot;TminS&quot; =&gt; -0.8,
+    &quot;TmaxS&quot; =&gt; 2.8,
+    &quot;WatFreez_Th&quot; =&gt; -8.0,
+    &quot;dz_ice&quot; =&gt; 0.45,
+    &quot;Th_Pr_sno&quot; =&gt; 8.0,
+    &quot;ros_max1&quot; =&gt; 550.0,
+    &quot;ros_max2&quot; =&gt; 300.0,
+    &quot;Ice_wc_sp&quot; =&gt; 0.01,
+    &quot;ros_ice_thr&quot; =&gt; 500.0,
+    &quot;Aice&quot; =&gt; 0.28,
+    &quot;dir_vis&quot; =&gt; 0.2,
+    &quot;dif_vis&quot; =&gt; 0.2,
+    &quot;dir_nir&quot; =&gt; 0.2,
+    &quot;dif_nir&quot; =&gt; 0.2,
+    &quot;Sp_SN_In&quot; =&gt; 5.9,
+)</code></pre><h3 id="Urban-parameters"><a class="docs-heading-anchor" href="#Urban-parameters">Urban parameters</a><a id="Urban-parameters-1"></a><a class="docs-heading-anchor-permalink" href="#Urban-parameters" title="Permalink"></a></h3><pre><code class="language-julia hljs">data[&quot;urban&quot;] = Dict{String,Any}(
+    &quot;alb&quot; =&gt; 0.15,
+    &quot;e_sur&quot; =&gt; 0.92,
+    &quot;BuildH&quot; =&gt; 12.0,
+    &quot;In_max_urb&quot; =&gt; 5.0
+)</code></pre><h3 id="Vegetation-parameters"><a class="docs-heading-anchor" href="#Vegetation-parameters">Vegetation parameters</a><a id="Vegetation-parameters-1"></a><a class="docs-heading-anchor-permalink" href="#Vegetation-parameters" title="Permalink"></a></h3><pre><code class="language-julia hljs">data[&quot;vegetation&quot;] = Dict{String, Any}(
+    &quot;gcI&quot; =&gt; 3.7,
+    &quot;KcI&quot; =&gt; 0.06,
+    &quot;Kct&quot; =&gt; 0.75,
+    &quot;Sllit&quot; =&gt; 2.0,
+    &quot;Oa&quot; =&gt; 210000.0,
+)
+
+data[&quot;vegetation&quot;][&quot;high&quot;] = Dict{String,Any}(
+    &quot;ZRmax&quot; =&gt; [NaN64],
+    &quot;ZR50&quot; =&gt; [NaN64],
+    &quot;Knit&quot; =&gt; [0.2],
+    &quot;mSl&quot; =&gt; [0.0],
+    &quot;FI&quot; =&gt; [0.081],
+    &quot;Do&quot; =&gt; [1000.0],
+    &quot;a1&quot; =&gt; [7.0],
+    &quot;go&quot; =&gt; [0.01],
+    &quot;CT&quot; =&gt; [3],
+    &quot;DSE&quot; =&gt; [0.649],
+    &quot;Ha&quot; =&gt; [72.0],
+    &quot;gmes&quot; =&gt; [Inf64],
+    &quot;rjv&quot; =&gt; [2.8],
+    &quot;Vmax&quot; =&gt; [0.0],
+    &quot;Psi_sto_00&quot; =&gt; [-0.5],
+    &quot;Psi_sto_50&quot; =&gt; [-2.0],
+    &quot;PsiL00&quot; =&gt; [-2.7],
+    &quot;PsiL50&quot; =&gt; [-5.6],
+    &quot;PsiX50&quot; =&gt; [-3.5],
+    &quot;Kleaf_max&quot; =&gt; [5.0],
+    &quot;Cl&quot; =&gt; [1200.0],
+    &quot;Axyl&quot; =&gt; [15.0],
+    &quot;Kx_max&quot; =&gt; [80000.0],
+    &quot;Cx&quot; =&gt; [150.0],
+    &quot;Sl&quot; =&gt; [0.016],
+    &quot;Osm_reg_Max&quot; =&gt; [0.0],
+    &quot;eps_root_base&quot; =&gt; [0.9],
+    &quot;d_leaf&quot; =&gt; [3.5],
+    &quot;Sp_LAI_In&quot; =&gt; [0.2],
+    &quot;OM&quot; =&gt; 1.0,
+    &quot;PFT_Class&quot; =&gt; [0],
+)
+
+data[&quot;vegetation&quot;][&quot;low&quot;] = Dict{String,Any}(
+    ...
+)</code></pre><p>All parameters with bracketed values require one value per crown area. <code>data[&quot;vegetation&quot;][&quot;low&quot;]</code> can be filled similarly with low vegetation parameters.</p><h3 id="Vegetation-dynamics"><a class="docs-heading-anchor" href="#Vegetation-dynamics">Vegetation dynamics</a><a id="Vegetation-dynamics-1"></a><a class="docs-heading-anchor-permalink" href="#Vegetation-dynamics" title="Permalink"></a></h3><p>The vegetation dynamics parameters are created as a vector of <code>Dict</code>, with one <code>Dict</code> per crown area.</p><pre><code class="language-julia hljs">data[&quot;vegetationdynamics&quot;] = Dict{String,Any}()
+data[&quot;vegetationdynamics&quot;][&quot;high&quot;] = [Dict{String,Any}(
+      &quot;Sl&quot; =&gt; 0.016,
+      &quot;mSl&quot; =&gt; 0.0,
+      &quot;r&quot; =&gt; 0.030,
+      &quot;gR&quot; =&gt; 0.25,
+      &quot;LtR&quot; =&gt; 1.0,
+      &quot;eps_ac&quot; =&gt; 1.0,
+      &quot;aSE&quot; =&gt; 5,
+      &quot;Trr&quot; =&gt; 3.5,
+      &quot;dd_max&quot; =&gt; 1/365,
+      &quot;dc_C&quot; =&gt; 2/365,
+      &quot;Tcold&quot; =&gt; 7.0,
+      &quot;drn&quot; =&gt; 1/1095,
+      &quot;dsn&quot; =&gt; 1/365,
+      &quot;age_cr&quot; =&gt; 150.0,
+      &quot;Bfac_lo&quot; =&gt; 0.95,
+      &quot;Bfac_ls&quot; =&gt; NaN64,
+      &quot;Tlo&quot; =&gt; 12.9,
+      &quot;Tls&quot; =&gt; NaN64,
+      &quot;mjDay&quot; =&gt; 180,
+      &quot;LDay_min&quot; =&gt; 11.0,
+      &quot;dmg&quot; =&gt; 35.0,
+      &quot;Mf&quot; =&gt; 1/50,
+      &quot;Wm&quot; =&gt; 1/16425,
+      &quot;LAI_min&quot; =&gt; 0.01,
+      &quot;LDay_cr&quot; =&gt; 12.30,
+      &quot;PsiG50&quot; =&gt; -0.45,
+      &quot;PsiG99&quot; =&gt; -1.2,
+      &quot;gcoef&quot; =&gt; 3.5,
+      &quot;Klf&quot; =&gt; 1/15,
+      &quot;fab&quot; =&gt; 0.74,
+      &quot;fbe&quot; =&gt; 0.26,
+      &quot;ff_r&quot; =&gt; 0.1,
+      &quot;PAR_th&quot; =&gt; NaN64,
+      &quot;PsiL50&quot; =&gt; -5.6,
+      &quot;PsiL00&quot; =&gt; -2.7,
+      &quot;Nl&quot; =&gt; 30.0,
+)]
+
+data[&quot;vegetationdynamics&quot;][&quot;low&quot;] = [Dict{String,Any}(
+    ...
+)]</code></pre><h3 id="Vegetation-management"><a class="docs-heading-anchor" href="#Vegetation-management">Vegetation management</a><a id="Vegetation-management-1"></a><a class="docs-heading-anchor-permalink" href="#Vegetation-management" title="Permalink"></a></h3><pre><code class="language-julia hljs">data[&quot;vegetationmanagement&quot;] = Dict{String,Any}(
+    &quot;high&quot; =&gt; [
+        Dict{String,Any}(
+            &quot;LAI_cut&quot; =&gt; 0.0,
+            &quot;B_harv&quot; =&gt; 0.0,
+            &quot;fract_log&quot; =&gt; 0.0,
+            &quot;fire_eff&quot; =&gt; 0.0,
+            &quot;funb_nit&quot; =&gt; 0.15,
+            &quot;fract_girdling&quot; =&gt; 0.0,
+            &quot;Crop_B&quot; =&gt; [0.0, 0.0],
+            &quot;Crop_crown&quot; =&gt; 1.0,
+            &quot;fract_resprout&quot; =&gt; 0.2,
+            &quot;fract_left&quot; =&gt; 1.0,
+            &quot;fract_left_fr&quot; =&gt; 0.0,
+            &quot;fract_left_AB&quot; =&gt; 0.0,
+            &quot;fract_left_BG&quot; =&gt; 1.0,
+        ),
+    ],
+)
+
+data[&quot;vegetationmanagement&quot;][&quot;low&quot;] = data[&quot;vegetationmanagement&quot;][&quot;high&quot;]
+data[&quot;vegetationmanagement&quot;][&quot;low&quot;][1][&quot;jDay_cut&quot;] = [132, 168, 202, 238, 292]
+data[&quot;vegetationmanagement&quot;][&quot;low&quot;][1][&quot;LAI_cut&quot;] = 1.68</code></pre><h3 id="Exudation-parameters"><a class="docs-heading-anchor" href="#Exudation-parameters">Exudation parameters</a><a id="Exudation-parameters-1"></a><a class="docs-heading-anchor-permalink" href="#Exudation-parameters" title="Permalink"></a></h3><pre><code class="language-julia hljs">data[&quot;exudation&quot;] = Dict{String,Any}(
+    &quot;high&quot; =&gt; [Dict{String,Any}(&quot;bfix&quot; =&gt; false)],
+    &quot;low&quot; =&gt; [Dict{String,Any}(&quot;bfix&quot; =&gt; false)],
+)</code></pre><h3 id="Biogeochemistry-parameters"><a class="docs-heading-anchor" href="#Biogeochemistry-parameters">Biogeochemistry parameters</a><a id="Biogeochemistry-parameters-1"></a><a class="docs-heading-anchor-permalink" href="#Biogeochemistry-parameters" title="Permalink"></a></h3><pre><code class="language-julia hljs">data[&quot;biogeochemistry&quot;] = Dict{String,Any}(&quot;PH&quot; =&gt; 5.0, &quot;ExEM&quot; =&gt; 0.0)
+
+data[&quot;biogeochemistry_io&quot;] = Dict{String,Any}(
+    &quot;SC_par&quot; =&gt; [1.0, 1.0, 1.0, 1.0],
+    &quot;Upl&quot; =&gt; 0.01,
+    &quot;HIST&quot; =&gt; false
+)</code></pre><h3 id="Save-the-YAML-configuration"><a class="docs-heading-anchor" href="#Save-the-YAML-configuration">Save the YAML configuration</a><a id="Save-the-YAML-configuration-1"></a><a class="docs-heading-anchor-permalink" href="#Save-the-YAML-configuration" title="Permalink"></a></h3><pre><code class="language-julia hljs">YAML.write_file(&quot;your_site_parameters.yaml&quot;, data)</code></pre><h2 id="input_netcdf"><a class="docs-heading-anchor" href="#input_netcdf">Step 3: NetCDF File</a><a id="input_netcdf-1"></a><a class="docs-heading-anchor-permalink" href="#input_netcdf" title="Permalink"></a></h2><p>The NetCDF file contains both forcing data and initial conditions. The <code>NCDatasets</code> can be used to create and manipulate NetCDF files in Julia, via the <code>defGroup</code>, <code>defDim</code>, and <code>defVar</code> functions. Before creating the initial conditions, the dimensions must be defined. Similarly, for height-dependent variables, the high and low vegetation groups must be created first.</p><h3 id="Initialize-the-NetCDF-file"><a class="docs-heading-anchor" href="#Initialize-the-NetCDF-file">Initialize the NetCDF file</a><a id="Initialize-the-NetCDF-file-1"></a><a class="docs-heading-anchor-permalink" href="#Initialize-the-NetCDF-file" title="Permalink"></a></h3><pre><code class="language-julia hljs">ds = NCDataset(&quot;your_site_data.nc&quot;, &quot;c&quot;)
+
+high_vegetation = defGroup(ds, &quot;high_vegetation&quot;)
+low_vegetation = defGroup(ds, &quot;low_vegetation&quot;)</code></pre><h3 id="Define-dimensions"><a class="docs-heading-anchor" href="#Define-dimensions">Define dimensions</a><a id="Define-dimensions-1"></a><a class="docs-heading-anchor-permalink" href="#Define-dimensions" title="Permalink"></a></h3><pre><code class="language-julia hljs">defDim(ds, &quot;crownareas&quot;, 1)
+defDim(ds, &quot;carbonpools&quot;, 8)
+defDim(ds, &quot;nutrient&quot;, 3)
+defDim(ds, &quot;layers&quot;, length(Zs))
+defDim(ds, &quot;layerbelowsurface&quot;, n_layers)
+...</code></pre><h3 id="Add-time-variables"><a class="docs-heading-anchor" href="#Add-time-variables">Add time variables</a><a id="Add-time-variables-1"></a><a class="docs-heading-anchor-permalink" href="#Add-time-variables" title="Permalink"></a></h3><pre><code class="language-julia hljs">defVar(ds, &quot;datetime&quot;, datetime_array, (&quot;hours&quot;,))</code></pre><h3 id="Add-meteorological-forcing-data"><a class="docs-heading-anchor" href="#Add-meteorological-forcing-data">Add meteorological forcing data</a><a id="Add-meteorological-forcing-data-1"></a><a class="docs-heading-anchor-permalink" href="#Add-meteorological-forcing-data" title="Permalink"></a></h3><pre><code class="language-julia hljs">defVar(ds, &quot;Pr&quot;, precipitation_data, (&quot;hours&quot;,))
+defVar(ds, &quot;Ta&quot;, temperature_data, (&quot;hours&quot;,))
+defVar(ds, &quot;Ws&quot;, wind_speed_data, (&quot;hours&quot;,))
+defVar(ds, &quot;ea&quot;, vapor_pressure_data, (&quot;hours&quot;,))
+defVar(ds, &quot;SAD1&quot;, sad1_data, (&quot;hours&quot;,))
+defVar(ds, &quot;SAD2&quot;, sad2_data, (&quot;hours&quot;,))
+defVar(ds, &quot;SAB1&quot;, sab1_data, (&quot;hours&quot;,))
+defVar(ds, &quot;SAB2&quot;, sab2_data, (&quot;hours&quot;,))
+defVar(ds, &quot;Tdew&quot;, tdew_data, (&quot;hours&quot;,))
+defVar(ds, &quot;esat&quot;, esat_data, (&quot;hours&quot;,))
+defVar(ds, &quot;PARB&quot;, parb_data, (&quot;hours&quot;,))
+defVar(ds, &quot;PARD&quot;, pard_data, (&quot;hours&quot;,))
+defVar(ds, &quot;Ca&quot;, co2_data, (&quot;hours&quot;,))
+
+# Calculate vapor pressure deficit
+Ds = max.(esat_data - vapor_pressure_data, 0)
+defVar(ds, &quot;Ds&quot;, Ds, (&quot;hours&quot;,))</code></pre><h3 id="Add-soil-layer-information"><a class="docs-heading-anchor" href="#Add-soil-layer-information">Add soil layer information</a><a id="Add-soil-layer-information-1"></a><a class="docs-heading-anchor-permalink" href="#Add-soil-layer-information" title="Permalink"></a></h3><pre><code class="language-julia hljs">defVar(ds, &quot;Zs&quot;, soil_depths, (&quot;layers&quot;,))</code></pre><h3 id="Add-initial-conditions-for-state-and-auxiliary-variables"><a class="docs-heading-anchor" href="#Add-initial-conditions-for-state-and-auxiliary-variables">Add initial conditions for state and auxiliary variables</a><a id="Add-initial-conditions-for-state-and-auxiliary-variables-1"></a><a class="docs-heading-anchor-permalink" href="#Add-initial-conditions-for-state-and-auxiliary-variables" title="Permalink"></a></h3><p>For hydrologic state variables shared between high and low vegetation:</p><pre><code class="language-julia hljs">O = [
+    0.3269,
+    0.328,
+    0.329,
+    0.3314,
+    0.3341,
+    0.3367,
+    0.3402,
+    0.3442,
+    0.3476,
+    0.3505,
+    0.3541,
+    0.3564,
+]
+defVar(ds, &quot;O&quot;, initial_soil_moisture, (&quot;layerbelowsurface&quot;,))
+defVar(ds, &quot;Tdamp&quot;, 22.0, ())
+...</code></pre><p>For hydrologic state variables specific to high vegetation:</p><pre><code class="language-julia hljs">
+defVar(high_vegetation, &quot;Ci_sun&quot;, [Ca[1]], (&quot;crownareas&quot;,))
+defVar(high_vegetation, &quot;Ci_shd&quot;, [Ca[1]], (&quot;crownareas&quot;,))
+defVar(high_vegetation, &quot;In&quot;, [0.0], (&quot;crownareas&quot;,))
+defVar(high_vegetation, &quot;LAI_tot&quot;, [0.0], (&quot;crownareas&quot;,))
+...</code></pre><h3 id="Close-the-NetCDF-file"><a class="docs-heading-anchor" href="#Close-the-NetCDF-file">Close the NetCDF file</a><a id="Close-the-NetCDF-file-1"></a><a class="docs-heading-anchor-permalink" href="#Close-the-NetCDF-file" title="Permalink"></a></h3><pre><code class="language-julia hljs">close(ds)</code></pre><h2 id="input_examples"><a class="docs-heading-anchor" href="#input_examples">Existing Examples</a><a id="input_examples-1"></a><a class="docs-heading-anchor-permalink" href="#input_examples" title="Permalink"></a></h2><p>The <code>create_vaira_data.jl</code> and <code>create_zurich_data.jl</code> scripts in the <code>data-raw</code> directory provide complete examples of creating input files for specific sites. You can adapt these scripts for your own site by:</p><ol><li>Replacing the input data sources with your own meteorological data</li><li>Adjusting site-specific parameters (location, soil properties, vegetation characteristics)</li><li>Modifying initial conditions based on your site knowledge</li></ol><p>By following these steps, you&#39;ll be able to create the necessary input files to run TethysChloris.jl with your own site data.</p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../01-installation/">« Installation</a><a class="docs-footer-nextpage" href="../03-model/">Running the model »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.15.0 on <span class="colophon-date" title="Tuesday 4 November 2025 15:06">Tuesday 4 November 2025</span>. Using Julia version 1.12.1.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>

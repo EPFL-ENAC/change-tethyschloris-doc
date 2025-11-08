@@ -22,11 +22,19 @@ Below are step-by-step instructions for creating these files from meteorological
 
 You'll need the following Julia packages:
 
+* `NCDatasets.jl` for handling NetCDF files
+* `YAML.jl` for creating YAML configuration files
+* `Dates` for date manipulation
+* `MAT.jl` for reading MATLAB .mat files (if using MATLAB data sources)
+
+These packages can be installed using Julia's package manager:
+
 ```julia
-using NCDatasets  # For handling NetCDF files
-using YAML        # For creating YAML configuration files
-using Dates       # For date manipulation
-using MAT         # For reading MATLAB .mat files (if using MATLAB data sources)
+using Pkg
+Pkg.add("NCDatasets")
+Pkg.add("YAML")
+Pkg.add("Dates")
+Pkg.add("MAT")
 ```
 
 ## [Step 1: Data Sources](@id input_sources)

@@ -14,3 +14,5 @@ git clone https://github.com/CHANGE-EPFL/TethysChloris.jl.git
 using Pkg
 Pkg.develop(path="TethysChloris.jl")
 ```
+
+Please note that the first installation may take up to 15 minutes as Julia will download and compile all the necessary dependencies for the package.

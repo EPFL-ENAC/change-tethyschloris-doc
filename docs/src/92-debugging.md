@@ -93,3 +93,22 @@ Another simple but effective debugging strategy is to add print statements throu
 ## Integrating MATLAB results for debugging
 
 If you have access to the MATLAB results, you can integrate them into the Julia debugging process by loading the MATLAB `.mat` files directly into your Julia environment using the `MAT.jl` package, and then setting the model variable of interest to the corresponding MATLAB data over the simulation period. This allows you to isolate and test specific components of the model against known good data. In addition, you should disable the state saving functionality by commenting it out to avoid overwriting the MATLAB results during the simulation.
+
+## Identifying coverage gaps
+
+After running a simulation with TethysChloris.jl, you can identify which parts of the model were exercised but were not covered by tests. This is useful for improving test coverage and ensuring that all parts of the model are adequately tested. You can use the `generate_coverage_report` function to create a coverage report for your simulation script. These functions are located in the `tools` folder of the TethysChloris.jl repository.
+
+```julia
+# Generate coverage report for the simulation run
+generate_coverage_report("zurich_example.jl", "zurich_coverage")
+
+# Generate coverage report for the test suite
+generate_test_coverage_report("test_coverage")
+```
+
+Once the coverage reports are generated, you can compare the two reports using `coverage_diff` to identify gaps in test coverage.
+
+```julia
+# Compare coverage reports to identify elements covered in the simulation but not in tests
+coverage_diff("test_coverage", "zurich_coverage")
+```

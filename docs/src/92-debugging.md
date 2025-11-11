@@ -89,3 +89,7 @@ To avoid the first issue, more lightweight debugging tools such as [Infiltrator.
 ## Printing intermediate results
 
 Another simple but effective debugging strategy is to add print statements throughout the source code to track the flow of execution and the values of key variables. This can help identify where things are going wrong and what might be causing the issue and has been one of the most time-efficient ways to debug the code so far. This approach, however, requires the user to clone the repository and modify the source code directly.
+
+## Integrating MATLAB results for debugging
+
+If you have access to the MATLAB results, you can integrate them into the Julia debugging process by loading the MATLAB `.mat` files directly into your Julia environment using the `MAT.jl` package, and then setting the model variable of interest to the corresponding MATLAB data over the simulation period. This allows you to isolate and test specific components of the model against known good data. In addition, you should disable the state saving functionality by commenting it out to avoid overwriting the MATLAB results during the simulation.

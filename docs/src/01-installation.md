@@ -4,11 +4,15 @@ To use the TethysChloris package, you can install it by cloning it from its GitH
 
 ## Cloning the repository
 
+In your terminal, run the following command to clone the repository:
+
 ```bash
 git clone https://github.com/CHANGE-EPFL/TethysChloris.jl.git 
 ```
 
 ## Adding the package to your Julia environment
+
+Open Julia's REPL, and run the following commands to add the package:
 
 ```julia
 using Pkg

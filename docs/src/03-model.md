@@ -36,8 +36,8 @@ The model is designed to be run in a Julia environment. You can use the followin
       SoilTemperature = true,
       FreezingSoil = true,
       VegetationSnowInteractions = true,
-      OPT_ST = ZeroFindingOptions(FT; atol = 0.1),
-      OPT_ST2 = ZeroFindingOptions(FT; atol = 0.1),
+      OPT_ST = ZeroFindingOptions(FT; rtol = 0.1),
+      OPT_ST2 = ZeroFindingOptions(FT; rtol = 0.1),
       OPT_VD = ODEOptions(; abstol = 0.05),
    )
    ```
@@ -47,7 +47,7 @@ The model is designed to be run in a Julia environment. You can use the followin
    ```julia
    NNd = 3
    NN = NNd * 24
-   run_simulation(model, NN, options)
+   ALB, CK1 = run_simulation(model; NN = NN, options = options)
    ```
 
 Please note that the simulation results will be stored in the model instance, and you can access them for further analysis or visualization.

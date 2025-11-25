@@ -11,7 +11,7 @@ The model is designed to be run in a Julia environment. You can use the followin
    using TethysChloris
    ```
 
-3. **Load the configuration and forcing files**: You need to specify the paths to your configuration and forcing files and load the associated data. For example:
+3. **Load the configuration and forcing files**: You need to specify the paths to your configuration and forcing files. For example:
 
    ```julia
    yaml_file = "path/to/configuration.yaml"

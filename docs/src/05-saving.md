@@ -11,7 +11,7 @@ save(model, "path/to/outputs.zip"; compress = true)
 
 ## Specifying variables to save
 
-By default, the `save` function will store all the available output variables in the NetCDF results file. However, you can specify a subset of variables to save by providing a list of variable names using the `outputs` keyword argument. For example, to save only the variables "ALB" and "DQ", you can use:
+By default, the `save` function will store all the available output variables in the NetCDF results file. However, you can specify a subset of variables to save by providing a list of variable names using the `outputs` keyword argument. For example, to save only the variables "LAI_L" and "Vice", you can use:
 
 ```julia
 save(model, "path/to/outputs.zip"; outputs = ["LAI_L", "Vice"], compress = true)

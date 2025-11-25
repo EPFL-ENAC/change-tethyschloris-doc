@@ -1,7 +1,7 @@
 name = "TethysChlorisDoc"
 uuid = "e39aa6fb-499b-4f13-a97b-0c49940e9d42"
 authors = ["Hugo Solleder <hugo.solleder@epfl.ch> and contributors"]
-version = "0.7.1"
+version = "0.7.3"
 
 [compat]
 julia = "1.10"

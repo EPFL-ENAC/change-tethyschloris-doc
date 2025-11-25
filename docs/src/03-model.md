@@ -9,18 +9,13 @@ The model is designed to be run in a Julia environment. You can use the followin
 
    ```julia
    using TethysChloris
-   using YAML
-   using NCDatasets
    ```
 
 3. **Load the configuration and forcing files**: You need to specify the paths to your configuration and forcing files and load the associated data. For example:
 
    ```julia
    yaml_file = "path/to/configuration.yaml"
-   yaml_data = YAML.load_file(yaml_file; dicttype=Dict{String, Any})
-
    forcing_file = "path/to/forcing.nc"
-   forcing_data = NCDatasets.Dataset(forcing_file)
    ```
 
 4. **Initialize the model**: Create an instance of the model using the two files, as well as specifying the data type (e.g., `Float64`):
@@ -47,7 +42,7 @@ The model is designed to be run in a Julia environment. You can use the followin
    ```julia
    NNd = 3
    NN = NNd * 24
-   ALB, CK1 = run_simulation(model; NN = NN, options = options)
+   ALB, CK1, Ck, DQ = run_simulation(model; NN = NN, options = options)
    ```
 
 Please note that the simulation results will be stored in the model instance, and you can access them for further analysis or visualization.

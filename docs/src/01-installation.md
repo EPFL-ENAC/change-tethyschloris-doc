@@ -14,8 +14,10 @@ This will create a local copy of the TethysChloris.jl repository on your machine
 
 To only clone the latest version, without the full history, you can use the `--depth 1` option:
 
+> **Note:** Replace `<latest-tag>` with the latest release tag from [the releases page](https://github.com/CHANGE-EPFL/TethysChloris.jl/releases).
+
 ```bash
-git clone --depth 1 --branch v0.7.3 https://github.com/CHANGE-EPFL/TethysChloris.jl.git
+git clone --depth 1 --branch <latest-tag> https://github.com/CHANGE-EPFL/TethysChloris.jl.git
 ```
 
 ## Adding the package to your Julia environment

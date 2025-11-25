@@ -19,6 +19,7 @@ makedocs(;
         "Running the model" => "03-model.md",
         "Plotting the results" => "04-plots.md",
         "Saving the results" => "05-saving.md",
+        "Flow overview" => "06-flow.md",
         "Contributing" => "90-contributing.md",
         "Developer docs" =>
             Any["Developer"=>"91-developer.md", "Debugging"=>"92-debugging.md"],

@@ -94,7 +94,7 @@ resistance
 - `OPT_PH`: parameters for the ODE solver of the plant hydraulics
 
 Notes:
-- `OPT_STh` is not implemented, as the code is never reached in the original MATLAB code due
+- `OPT_STh` is not implemented, as the code is never reached in the original MATLAB code due to
     `OPZ_SOLV` being hard-coded to 1
 """
 ```

@@ -1,6 +1,7 @@
 # [Saving the simulation results](@id saving)
 
-After running a simulation with the TethysChloris.jl model, you may want to save the results for future analysis or sharing. The package provides a `save` function to export the inputs and outputs to a (compressible) zip file. This file will contain
+After running a simulation with the TethysChloris.jl model, you may want to save the results for future analysis or sharing. The package provides a `save` function to export the inputs and outputs to a (compressable) zip file. This file will contain
+
 * the input YAML file
 * the input NetCDF forcing file
 * the simulation results as a NetCDF file.
